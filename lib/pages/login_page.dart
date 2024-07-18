@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_chat_app/components/my_button.dart';
 import 'package:flutter_chat_app/components/my_textfield.dart';
 
@@ -9,7 +10,13 @@ class LoginPage extends StatelessWidget {
   // password controller
   final TextEditingController _passwordController = TextEditingController();
 
-  LoginPage({super.key});
+  final Function()? onTap;
+
+  LoginPage({super.key, required this.onTap});
+
+  void login() {
+    // TODO: implement onTap
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -65,11 +72,39 @@ class LoginPage extends StatelessWidget {
             ),
 
             // login button
-            const MyButton(
-              text: 'Login',
-            )
+            MyButton(
+              text: 'Register',
+              onTap: login,
+            ),
+
+            const SizedBox(
+              height: 15,
+            ),
 
             // register now
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  'Don\'t have an account? ',
+                  style: TextStyle(
+                    color: Theme.of(context).colorScheme.primary,
+                    fontSize: 16,
+                  ),
+                ),
+                GestureDetector(
+                  onTap: onTap,
+                  child: Text(
+                    'Register Now',
+                    style: TextStyle(
+                      color: Theme.of(context).colorScheme.primary,
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+              ],
+            ),
           ],
         ),
       ),
