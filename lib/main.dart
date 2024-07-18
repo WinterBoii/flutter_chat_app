@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_chat_app/pages/login_page.dart';
+import 'package:flutter_chat_app/auth/login_or_register.dart';
 import 'package:flutter_chat_app/themes/light_mode.dart';
 
 void main() {
@@ -14,7 +14,7 @@ class MainApp extends StatelessWidget {
     return MaterialApp(
       theme: lightMode,
       debugShowCheckedModeBanner: false,
-      home: Scaffold(body: LoginPage()),
+      home: const Scaffold(body: LoginOrRegister()),
     );
   }
 }
