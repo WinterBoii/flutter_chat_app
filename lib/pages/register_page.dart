@@ -12,8 +12,7 @@ class RegisterPage extends StatelessWidget {
   // email, pw controller
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
-  final TextEditingController _confirmPasswordController =
-      TextEditingController();
+  final TextEditingController _confirmPasswordController = TextEditingController();
 
   void register(BuildContext context) async {
     // get auth service
@@ -22,8 +21,7 @@ class RegisterPage extends StatelessWidget {
     // passwords match => create user
     if (_passwordController.text == _confirmPasswordController.text) {
       try {
-        auth.signUpWithEmailPassword(
-            _emailController.text, _passwordController.text);
+        auth.signUpWithEmailPassword(_emailController.text, _passwordController.text);
       } catch (e) {
         showDialog(
           context: context,
