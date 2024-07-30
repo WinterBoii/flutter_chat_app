@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_chat_app/components/my_drawer_header.dart';
 
-import '../auth/auth_service.dart';
+import '../services/auth/auth_service.dart';
 import '../pages/settings_page.dart';
 
 class MyDrawer extends StatelessWidget {
@@ -22,7 +23,13 @@ class MyDrawer extends StatelessWidget {
         children: [
           Column(
             children: [
-              DrawerHeader(
+              MyDrawerHeader(
+                decoration: BoxDecoration(
+                  border: Border(
+                    bottom: Divider.createBorderSide(context,
+                        color: Theme.of(context).colorScheme.background, width: 1.0),
+                  ),
+                ),
                 child: Center(
                   child: Icon(
                     Icons.message,
