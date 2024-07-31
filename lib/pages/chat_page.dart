@@ -1,6 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_chat_app/components/my_textfield.dart';
 import 'package:flutter_chat_app/services/auth/auth_service.dart';
 import 'package:flutter_chat_app/services/chat/chat_service.dart';
@@ -68,7 +67,7 @@ class ChatPage extends StatelessWidget {
                 ),
               ],
             ),
-          )
+          ),
         ],
       ),
     );
