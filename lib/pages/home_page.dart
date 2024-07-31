@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_chat_app/components/my_appbar.dart';
 import 'package:flutter_chat_app/services/auth/auth_service.dart';
 import 'package:flutter_chat_app/services/chat/chat_service.dart';
 
@@ -24,10 +25,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Home'),
-        centerTitle: true,
-      ),
+      appBar: MyAppbar(title: 'Home'),
       drawer: const MyDrawer(),
       body: _buildUserList(),
     );
