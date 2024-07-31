@@ -45,29 +45,9 @@ class ChatPage extends StatelessWidget {
             flex: 5,
             child: _buildMessageList(),
           ),
-          Expanded(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                Expanded(
-                  child: Padding(
-                    padding: const EdgeInsets.only(left: 12.0),
-                    child: MyTextField(hintText: hintText, controller: messageController),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(right: 12.0),
-                  child: IconButton(
-                    onPressed: sendMessage,
-                    icon: const Icon(
-                      Icons.send,
-                      size: 26,
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
+
+          // user input
+          _buildUserInput(),
         ],
       ),
     );
@@ -106,4 +86,23 @@ class ChatPage extends StatelessWidget {
   }
 
   // build message input
+  Widget _buildUserInput() {
+    return Padding(
+      padding: const EdgeInsets.all(16.0),
+      child: Row(
+        children: [
+          Expanded(
+            child: MyTextField(hintText: hintText, controller: messageController),
+          ),
+          IconButton(
+            onPressed: sendMessage,
+            icon: const Icon(
+              Icons.send,
+              size: 26,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
 }

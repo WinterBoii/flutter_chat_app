@@ -64,18 +64,21 @@ class HomePage extends StatelessWidget {
   Widget _buildUserListItem(Map<String, dynamic> userData, BuildContext context) {
     // display all users except current user
     if (_authService.getCurrentUser()!.email != userData['email']) {
-      return UserTile(
-        email: userData['email'],
-        onTap: () {
-          // tapped on user -> go to chat page
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) =>
-                  ChatPage(receiverID: userData['uid'], receiverEmail: userData['email']),
-            ),
-          );
-        },
+      return Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: UserTile(
+          email: userData['email'],
+          onTap: () {
+            // tapped on user -> go to chat page
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) =>
+                    ChatPage(receiverID: userData['uid'], receiverEmail: userData['email']),
+              ),
+            );
+          },
+        ),
       );
     }
     return Container();

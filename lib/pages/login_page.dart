@@ -39,8 +39,8 @@ class LoginPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.background,
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+        child: ListView(
+          padding: const EdgeInsets.only(top: 100),
           children: [
             // login
             Icon(
@@ -60,6 +60,7 @@ class LoginPage extends StatelessWidget {
                 color: Theme.of(context).colorScheme.primary,
                 fontSize: 18,
               ),
+              textAlign: TextAlign.center,
             ),
 
             const SizedBox(
