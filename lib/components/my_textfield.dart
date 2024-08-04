@@ -65,7 +65,7 @@ class _MyTextFieldState extends State<MyTextField> {
               icon: Icon(
                 Icons.clear,
                 size: 18,
-                color: Theme.of(context).colorScheme.primary,
+                color: Theme.of(context).colorScheme.inversePrimary,
               ),
             )
           ],

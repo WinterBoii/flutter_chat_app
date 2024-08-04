@@ -22,13 +22,13 @@ class ChatBubble extends StatelessWidget {
           Container(
             padding: const EdgeInsets.all(10),
             decoration: BoxDecoration(
-              color: isMe ? Colors.blue : Colors.white,
+              color: isMe ? Colors.blue : const Color.fromARGB(230, 255, 255, 255),
               borderRadius: BorderRadius.circular(10),
             ),
             child: Text(
               text,
               style: TextStyle(
-                color: isMe ? Colors.white : Colors.black,
+                color: isMe ? const Color.fromARGB(230, 255, 255, 255) : Colors.black,
               ),
             ),
           ),
